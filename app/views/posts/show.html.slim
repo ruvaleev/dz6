@@ -14,11 +14,10 @@ p
   = @post.disactive
 
 table
-  - @post.comments.order(created_at: :desc).each do |comment|
-    tr
-      td
-        b = comment.user.name
-      td = comment.body
+  = render partial: 'comments/comment', collection: @comments
+
+p
+  = paginate @comments
 
 => link_to 'Edit', edit_post_path(@post)
 '|

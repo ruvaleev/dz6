@@ -3,9 +3,11 @@ Post.destroy_all
 User.destroy_all
 
 hash_user = 10.times.map do
+  email = FFaker::Internet.safe_email
   {
     name: FFaker::Internet.user_name[0...16],
-    email: FFaker::Internet.safe_email
+    email: email,
+    password: email
   }
 end
 users = User.create! hash_user

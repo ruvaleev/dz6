@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(2)
   end
 
   # GET /posts/new
