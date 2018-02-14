@@ -4,6 +4,7 @@ ru:
     logout: Выход
     hello: Привет, %s
     registration: Регистрация
+    edit: Редактировать профиль
   activerecord:
     errors:
       messages:

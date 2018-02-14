@@ -5,8 +5,14 @@ header
         span = t('label.hello') % current_user.name
       li
         = link_to t('label.logout'), destroy_user_session_path, method: :delete
+      li
+        = link_to t('label.edit'), edit_user_registration_path
     - else
       li
         = link_to t('label.login'), new_user_session_path
       li
         = link_to t('label.registration'), new_user_registration_path
+      li
+        = link_to "Войти через Facebook", user_facebook_omniauth_authorize_path 
+        li
+        <li><a href='/auth/vkontakte'>Sign in with VKontakte</a></li>
